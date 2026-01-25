@@ -5,10 +5,8 @@ from tqdm import tqdm
 import numpy as np
 import pandas as pd
 
-SHAP_SAVE_DIR = 'shap_values'
-os.makedirs(SHAP_SAVE_DIR, exist_ok=True)
 
-def compute_and_save_shap_full_dataset(rf_model, X, save_dir=SHAP_SAVE_DIR):
+def compute_and_save_shap_full_dataset(rf_model, X, save_dir):
     """
     Compute SHAP values for the FULL dataset and save to disk.
     
@@ -97,7 +95,7 @@ def compute_and_save_shap_full_dataset(rf_model, X, save_dir=SHAP_SAVE_DIR):
     return shap_data
 
 
-def load_shap_values(filepath=None, save_dir=SHAP_SAVE_DIR):
+def load_shap_values(save_dir, filepath=None):
     """
     Load previously computed SHAP values from disk.
     
